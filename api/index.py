@@ -43,7 +43,7 @@ def signup():
         login_user(user)
         return redirect(url_for('home'))
     
-    return render_template('../signup.html')
+    return render_template('../templates/signup.html')
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
@@ -58,7 +58,7 @@ def login():
         
         flash('Geçersiz kullanıcı adı veya şifre.')
     
-    return render_template('../login.html')
+    return render_template('../templates/login.html')
 
 @app.route('/logout')
 @login_required
@@ -69,37 +69,37 @@ def logout():
 @app.route('/')
 @login_required
 def home():
-    return render_template('../day.html')
+    return render_template('../templates/day.html')
 
 @app.route('/learn')
 @login_required
 def learn():
-    return render_template('../learn.html')
+    return render_template('../templates/learn.html')
 
 @app.route('/story')
 @login_required
 def story():
-    return render_template('../story.html')
+    return render_template('../templates/story.html')
 
 @app.route('/summary')
 @login_required
 def summary():
-    return render_template('../summary.html')
+    return render_template('../templates/summary.html')
 
 @app.route('/quiz')
 @login_required
 def quiz():
-    return render_template('../quiz.html')
+    return render_template('../templates/quiz.html')
 
 @app.route('/quiz_result', methods=['POST'])
 @login_required
 def quiz_result():
-    return render_template('../quiz_result.html')
+    return render_template('../templates/quiz_result.html')
 
 @app.route('/dashboard')
 @login_required
 def dashboard():
-    return render_template('../dashboard.html')
+    return render_template('../templates/dashboard.html')
 
 if __name__ == '__main__':
     with app.app_context():
